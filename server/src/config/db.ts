@@ -1,11 +1,9 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
-// Load environment variables from .env file
 dotenv.config();
 
-const connectDB = async (): Promise<void> => {
-  // Get the string from process.env
+export const connectDB = async (): Promise<void> => {
   const dbUri = process.env.MONGO_URI;
 
   if (!dbUri) {
@@ -23,6 +21,3 @@ const connectDB = async (): Promise<void> => {
     process.exit(1);
   }
 };
-
-connectDB();
-

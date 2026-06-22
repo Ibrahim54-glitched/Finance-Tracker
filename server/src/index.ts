@@ -1,11 +1,13 @@
 import express from 'express';
 import type {Application,  Request, Response} from 'express';
 
+import { connectDB } from './config/db.ts';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
 const app: Application = express();
 const PORT: number = 5000;
+connectDB();
 
 app.use(cors());
 app.use(express.json());
