@@ -1,0 +1,189 @@
+/* Reset & Base Box Model Fix */
+.dashboard-container {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  font-family: system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
+}
+
+.dashboard-container * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Layout */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.logout-btn {
+  background-color: #ef4444;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.logout-btn:hover {
+  background-color: #dc2626;
+}
+
+/* Main Layout Centering */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.error-alert {
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem;
+  background-color: #fef2f2;
+  color: #dc2626;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  border: 1px solid #fee2e2;
+}
+
+/* 3-Column Summary Cards Grid */
+.summary-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Forces side-by-side row display */
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .summary-section {
+    grid-template-columns: 1fr; /* Stacks layout on mobile layouts gracefully */
+  }
+}
+
+.placeholder-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.placeholder-card h3 {
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+/* Transactions Table/List Wrapper Container */
+.transactions-section {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1.25rem;
+}
+
+.placeholder-list {
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  padding: 3rem;
+  text-align: center;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+/* Row-by-Row Transactions List Layout */
+.transaction-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.transaction-item-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  transition: background-color 0.15s ease;
+}
+
+.transaction-item-card:hover {
+  background-color: #f9fafb;
+}
+
+.tx-info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: flex-start;
+}
+
+.tx-amount-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: flex-end; /* Aligns pricing parameters tightly to the right edge */
+}
+
+.tx-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.tx-date {
+  font-size: 0.8125rem;
+  color: #6b7280;
+}
+
+.tx-amount {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.tx-amount.income {
+  color: #10b981;
+}
+
+.tx-amount.expense {
+  color: #ef4444;
+}
+
+.tx-badge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  background-color: #f3f4f6;
+  color: #4b5563;
+  padding: 0.125rem 0.5rem;
+  border-radius: 6px;
+  text-transform: capitalize;
+}
+
