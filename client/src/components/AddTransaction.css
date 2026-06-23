@@ -1,0 +1,199 @@
+.modal-overlay {
+  position: fixed !important; /* Force screen override */
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background-color: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(8px);
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 999999 !important;
+  padding: 1.5rem !important; /* Forces outer screen breathing room */
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* ==========================================================================
+   2. CORNER CARD PAD WINDOW (FIXED INDENTATION)
+   ========================================================================== */
+.modal-card {
+  background-color: #ffffff !important;
+  width: 100% !important;
+  max-width: 460px !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  box-shadow: 
+    0 24px 48px -12px rgba(15, 23, 42, 0.12),
+    0 12px 24px -8px rgba(15, 23, 42, 0.04) !important;
+  
+  /* CRITICAL PADDING PRESERVATION OVERRIDES */
+  padding: 2.25rem !important; 
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+  
+  display: flex !important;
+  flex-direction: column !important;
+  animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Enforce box-sizing deep into the card to block outside cascading styles */
+.modal-card,
+.modal-card *,
+.modal-card *::before,
+.modal-card *::after {
+  box-sizing: border-box !important;
+  margin: 0;
+}
+
+@keyframes modalSlideUp {
+  from { transform: translateY(16px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-title {
+  font-size: 1.375rem !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 1.75rem !important; /* Generates space beneath the header text */
+  text-align: left !important;
+}
+
+/* ==========================================================================
+   3. FORM FIELD SPACING CONTROL
+   ========================================================================== */
+.modal-form {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.25rem !important; /* Clear margin separations between input blocks */
+  width: 100% !important;
+}
+
+.form-row {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.5rem !important; /* Space between label text and the input field box */
+  width: 100% !important;
+}
+
+.form-label {
+  font-size: 0.8125rem !important;
+  font-weight: 600 !important;
+  color: #475569 !important;
+  letter-spacing: 0.01em !important;
+  text-transform: uppercase !important;
+  text-align: left !important;
+}
+
+/* ==========================================================================
+   4. FIXED COMPONENT CONTROLS (PADDING & DIMENSIONS)
+   ========================================================================== */
+.form-control {
+  width: 100% !important;
+  height: 44px !important; /* Locked explicit height tracking line */
+  
+  /* FIXED INNER FIELD TEXT PADDING */
+  padding: 0rem 1rem !important; 
+  
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 10px !important;
+  font-size: 0.9375rem !important;
+  color: #0f172a !important;
+  background-color: #f8fafc !important;
+  transition: all 0.2s ease !important;
+  appearance: none !important;
+}
+
+select.form-control {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' fill='none' viewBox='0 0 24 24' stroke='%23475569' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19.5 8.25l-7.5 7.5-7.5-7.5'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 1rem center !important;
+  background-size: 1rem !important;
+  padding-right: 2.5rem !important; /* Protects input padding from overlapping the chevron */
+}
+
+.form-control:hover {
+  border-color: #94a3b8 !important;
+  background-color: #ffffff !important;
+}
+
+.form-control:focus {
+  outline: none !important;
+  border-color: #2563eb !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12) !important;
+}
+
+.error-alert {
+  margin-bottom: 1.25rem !important;
+  padding: 0.875rem 1rem !important;
+  background-color: #fef2f2 !important;
+  color: #b91c1c !important;
+  border-radius: 10px !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  border: 1px solid #fee2e2 !important;
+}
+
+/* ==========================================================================
+   5. ACTION CONTROL BUTTON BOX PANELS
+   ========================================================================== */
+.modal-actions {
+  display: flex !important;
+  justify-content: flex-end !important;
+  gap: 0.875rem !important;
+  margin-top: 1rem !important; /* Pushes action buttons down away from fields */
+  width: 100% !important;
+}
+
+.btn-cancel {
+  background-color: #ffffff !important;
+  color: #475569 !important;
+  border: 1px solid #e2e8f0 !important;
+  padding: 0rem 1.5rem !important; /* Fixed inner horizontal click spacing padding */
+  border-radius: 10px !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  height: 42px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.15s ease !important;
+}
+
+.btn-cancel:hover {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #1e293b !important;
+}
+
+.btn-submit {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 0rem 1.5rem !important;
+  border-radius: 10px !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  height: 42px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2) !important;
+  transition: all 0.15s ease !important;
+}
+
+.btn-submit:hover {
+  background-color: #1d4ed8 !important;
+  box-shadow: 0 4px 16px rgba(29, 78, 216, 0.3) !important;
+  transform: translateY(-1px) !important;
+}
+
+.btn-submit:active {
+  transform: translateY(0) !important;
+}
+
